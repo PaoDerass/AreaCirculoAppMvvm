@@ -8,8 +8,10 @@
     Title="AreaCirculoAppMvvm">
 
     <ShellContent
-        Title="Home"
+        Title="Área del Círculo"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+  
 
 </Shell>
+
