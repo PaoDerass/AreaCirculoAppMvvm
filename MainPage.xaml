@@ -1,33 +1,61 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AreaCirculoAppMvvm.Views.CirculoPage"
+             x:Class="AreaCirculoAppMvvm.Views.Mainpage"
              xmlns:viewmodels="clr-namespace:AreaCirculoAppMvvm.ViewModels"
              Title="Calcular Área del Círculo">
     <ContentPage.BindingContext>
         <viewmodels:CirculoViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20">
+    <ContentPage.Background>
+       
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#6A1B9A" Offset="0.1" />
+            <GradientStop Color="#9C27B0" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="Center">
         <Label Text="Ingrese el radio:" 
                FontSize="Large" 
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="White" />
+
         <Entry Text="{Binding Radio, Mode=TwoWay}" 
                Keyboard="Numeric" 
-               Placeholder="Solo valores numéricos" />
+               Placeholder="Solo valores numéricos" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#6A1B9A"
+               FontSize="Medium"
+               Margin="0,10" />
 
         <Button Text="Calcular Área" 
-                Command="{Binding CalcAreaCommand}" />
+                Command="{Binding CalcAreaCommand}" 
+                BackgroundColor="#8E24AA" 
+                TextColor="White" 
+                FontSize="Medium"
+                CornerRadius="20"
+                HeightRequest="50"
+                Margin="0,10" />
 
         <Label Text="Resultado:" 
                FontSize="Large" 
-               HorizontalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="White" 
                Margin="10,20,10,0" />
+
         <Label Text="{Binding Res}" 
                FontSize="Large" 
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" 
+               TextColor="White" />
 
         <Button Text="Limpiar" 
                 Command="{Binding LimpiarCommand}" 
-                Margin="0,20,0,0" />
+                BackgroundColor="#7B1FA2" 
+                TextColor="White" 
+                FontSize="Medium"
+                CornerRadius="20"
+                HeightRequest="50"
+                Margin="0,20" />
     </StackLayout>
 </ContentPage>
